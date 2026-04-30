@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Radar de La Heroica | Última hora en Cartagena</title>
+    <meta name="description" content="Sucesos, tráfico y denuncia ciudadana en Cartagena. La realidad de las calles, sin filtros.">
+    
+    <!-- Tailwind CSS para el diseño rápido y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Configuración personalizada de colores -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        radar: {
+                            red: '#E63946',      // Rojo alerta
+                            dark: '#0f172a',     // Fondo principal oscuro
+                            gray: '#1e293b',     // Fondo secundario
+                            yellow: '#F5CB5C'    // Amarillo tráfico/precaución
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Animación de la barra de noticias (ticker) */
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-ticker {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker 25s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-radar-dark text-slate-200 font-sans antialiased selection:bg-radar-red selection:text-white">
+
+    <!-- Navbar Superior -->
+    <nav class="fixed w-full z-50 bg-radar-dark/90 backdrop-blur-md border-b border-radar-gray">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fa-solid fa-satellite-dish text-radar-red text-2xl animate-pulse"></i>
+                    <span class="font-bold text-xl tracking-tight text-white uppercase">El Radar</span>
+                </div>
+                <!-- Botón de acción rápido -->
+                <div>
+                    <a href="#denuncia" class="bg-radar-red/10 text-radar-red border border-radar-red/50 hover:bg-radar-red hover:text-white transition-colors px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-camera"></i> <span class="hidden sm:inline">Enviar Reporte</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Barra de Última Hora (Simulada) -->
+    <div class="pt-16 bg-radar-red text-white overflow-hidden py-1">
+        <div class="animate-ticker text-xs font-bold uppercase tracking-wider">
+            🚨 ALERTA: Fuerte congestión en la Av. Pedro de Heredia sector Bazurto. &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; ⚠️ PRECAUCIÓN: Reporte de lluvias fuertes en el sur de la ciudad. &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 🗣️ DENUNCIA: Vecinos reportan poste a punto de caer en Manga.
+        </div>
+    </div>
+
+    <!-- Hero Section (Sección Principal) -->
+    <header class="relative pt-20 pb-24 px-4 text-center overflow-hidden">
+        <!-- Efecto de resplandor de fondo -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-3xl opacity-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-radar-red via-radar-dark to-transparent -z-10"></div>
+        
+        <div class="max-w-4xl mx-auto">
+            <!-- Etiqueta de transmisión -->
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-radar-red/10 text-radar-red border border-radar-red/20 text-sm font-bold mb-8 shadow-[0_0_15px_rgba(230,57,70,0.3)]">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-radar-red opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-radar-red"></span>
+                </span>
+                100% CARTAGENA
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-white mb-6 leading-tight">
+                El Radar de <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-radar-red to-orange-500">La Heroica</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto font-light">
+                Sucesos, movilidad y denuncia ciudadana en tiempo real. Lo que pasa en las calles de Cartagena, te lo mostramos sin filtros.
+            </p>
+
+            <!-- Botones CTA (Call to Action) -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 w-full px-4 sm:px-0">
+                <a href="#denuncia" class="w-full sm:w-auto bg-radar-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-radar-red/20 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1">
+                    <i class="fa-solid fa-shield-halved text-xl"></i> 
+                    <span>Hacer Denuncia Anónima</span>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="w-full sm:w-auto bg-[#1877F2] hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1">
+                    <i class="fa-brands fa-facebook text-xl"></i> 
+                    <span>Seguir la Página</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Pilares / Categorías -->
+    <section class="py-16 bg-radar-gray/30 border-y border-radar-gray">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-4">Nuestro Foco Informativo</h2>
+                <p class="text-slate-400">Las tres áreas donde no se nos escapa nada.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
+                <div class="bg-radar-gray p-8 rounded-2xl border border-slate-700 hover:border-radar-red transition-colors text-center group">
+                    <div class="w-16 h-16 bg-radar-red/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bolt text-radar-red text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Última Hora</h3>
+                    <p class="text-slate-400 text-sm">Sucesos, emergencias y noticias de impacto en el instante en que ocurren en la ciudad.</p>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="bg-radar-gray p-8 rounded-2xl border border-slate-700 hover:border-radar-yellow transition-colors text-center group">
+                    <div class="w-16 h-16 bg-radar-yellow/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-traffic-light text-radar-yellow text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Movilidad y Tráfico</h3>
+                    <p class="text-slate-400 text-sm">Reportes en tiempo real de vías bloqueadas, accidentes y estado de Transcaribe.</p>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="bg-radar-gray p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-colors text-center group">
+                    <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bullhorn text-blue-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Denuncia Ciudadana</h3>
+                    <p class="text-slate-400 text-sm">Abusos, calles en mal estado o problemas en tu barrio. Tu voz es nuestra principal fuente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Denuncia (Embudo) -->
+    <section id="denuncia" class="py-20 px-4 relative">
+        <div class="max-w-3xl mx-auto bg-gradient-to-br from-radar-gray to-radar-dark p-8 md:p-12 rounded-3xl border border-slate-700 shadow-2xl relative overflow-hidden">
+            <!-- Icono de fondo marca de agua -->
+            <i class="fa-solid fa-shield-halved absolute -right-10 -bottom-10 text-[15rem] text-slate-800/30 z-0 rotate-12"></i>
+            
+            <div class="relative z-10 text-center">
+                <span class="bg-radar-red text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4 inline-block">100% Anónimo</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">¿Grabaste algo impactante?</h2>
+                <p class="text-slate-400 mb-8 max-w-xl mx-auto">No te quedes con la información. Envíanos tu video, foto o audio. Nosotros protegemos tu identidad y hacemos pública la situación de inmediato.</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <!-- Botón simulado para WhatsApp -->
+                    <button onclick="simularEnvio()" class="bg-[#25D366] hover:bg-[#1DA851] text-white font-bold py-3 px-6 rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Enviar por WhatsApp
+                    </button>
+                    <!-- Botón simulado para Messenger -->
+                    <button onclick="simularEnvio()" class="bg-[#0084FF] hover:bg-[#006BCE] text-white font-bold py-3 px-6 rounded-xl transition-colors flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-facebook-messenger text-xl"></i> Enviar por Messenger
+                    </button>
+                </div>
+                <p class="text-xs text-slate-500 mt-4"><i class="fa-solid fa-lock text-slate-600"></i> Tu número telefónico o perfil nunca será publicado.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-radar-dark border-t border-slate-800 py-8 text-center px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-satellite-dish text-radar-red"></i>
+                <span class="font-bold text-white">El Radar de La Heroica</span>
+            </div>
+            <div class="text-slate-500 text-sm">
+                &copy; <span id="year"></span> Todos los derechos reservados. Medio independiente.
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-tiktok text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script simple -->
+    <script>
+        // Poner el año actual en el footer automáticamente
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Función simulada para los botones de envío
+        function simularEnvio() {
+            alert("🚀 En un escenario real, este botón abrirá la app de WhatsApp o Messenger prellenada con un mensaje como: 'Hola El Radar, tengo un reporte anónimo...'");
+        }
+    </script>
+</body>
+</html>
