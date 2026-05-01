@@ -6,8 +6,8 @@ export const newsLabelSchema = z.object({
   tickerText: z.string(),
   themeColor: z.string().optional(),
   useGreenScreen: z.boolean().optional(),
-  durationInSeconds: z.number().min(1).max(3600).default(30),
-  tickerSpeed: z.number().min(1).max(50).default(8),
+  durationInSeconds: z.number().min(1).max(3600).default(10),
+  tickerSpeed: z.number().min(1).max(50).default(16),
   
   // Customizations
   brandNameFontSize: z.string().optional(),
@@ -33,10 +33,10 @@ export const defaultNewsLabelProps = {
   tickerText: "MANTÉNTE INFORMADO CON LAS NOTICIAS MÁS RELEVANTES DE LA HEROICA • SIGUENOS PARA MÁS CONTENIDO • EL RADAR DE LA HEROICA • ",
   themeColor: "#e63946",
   useGreenScreen: false,
-  durationInSeconds: 30,
-  tickerSpeed: 8,
+  durationInSeconds: 10,
+  tickerSpeed: 16,
 
-  brandNameFontSize: "4rem",
+  brandNameFontSize: "3.5rem",
   newsTopicFontSize: "2.5rem",
   tickerFontSize: "2rem",
   headerFontSize: "2.4rem",
@@ -45,7 +45,7 @@ export const defaultNewsLabelProps = {
   tickerBackgroundColor: "rgba(0, 0, 0, 0.8)",
   headerBackgroundColor: "#e63946",
 
-  bottomPosition: "8%",
+  bottomPosition: "1%",
   leftPosition: "0px",
-  padding: "0 60px",
+  padding: "0 20px",
 };
