@@ -1,0 +1,5 @@
+# Ignore temporary or separate project folders
+next-news-label/
+news-label.html
+node_modules/
+.DS_Store
